@@ -1,5 +1,4 @@
 package com.example.natureapp
-
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -54,20 +53,20 @@ fun ComplexLayout(paddingValues: PaddingValues){
         .background(Color.White),
         horizontalAlignment = Alignment.CenterHorizontally) {
 
-        Text(
-            modifier = Modifier
-                .padding(5.dp)
-                .background(Color.White)
-                .weight(0.05f),
-            text = "Maravillas del Mundo",
-            color = Green,
-            fontWeight = FontWeight.ExtraBold,
-            fontSize = 30.sp,)
+//        Text(
+//            modifier = Modifier
+//                .padding(5.dp)
+//                .background(Color.White)
+//                .weight(0.05f),
+//            text = "Maravillas del Mundo",
+//            color = Green,
+//            fontWeight = FontWeight.ExtraBold,
+//            fontSize = 30.sp,)
 
         LazyColumn(
             modifier = Modifier
                 .fillMaxWidth()
-                .weight(0.9f)
+                .weight(1f)
                 .padding(top = 0.dp)
                 .background(Color.White)) {
                 items(ListItem.items) { item ->

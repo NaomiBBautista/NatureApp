@@ -15,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
@@ -32,14 +33,14 @@ fun MyListItem(item : ListItem){
             .fillMaxWidth()
             .background(Color.White)
             .height(450.dp)
-            .padding(20.dp)
-            ,
-        shape = RoundedCornerShape(10.dp)) {
+            .padding(20.dp),
+        shape = RoundedCornerShape(20.dp)) {
 
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(10.dp),
+                .padding(10.dp)
+                .clip(RoundedCornerShape(15.dp)),
             verticalArrangement = Arrangement.Center) {
 
             Image(
@@ -47,21 +48,20 @@ fun MyListItem(item : ListItem){
                 contentDescription = null,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(0.5f),
+                    .weight(0.55f),
                 contentScale = ContentScale.Crop)
 
             Box (
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(0.15f)
+                    .weight(0.12f)
                     .background(Orange),
-                contentAlignment = Alignment.Center
-            ){
+                contentAlignment = Alignment.Center){
                 Text(
                     text = item.name,
                     color = Color.White,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 25.sp,
+                    fontSize = 23.sp,
                     modifier = Modifier.padding(10.dp)
                 )
             }
@@ -70,13 +70,14 @@ fun MyListItem(item : ListItem){
             Box (
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(0.35f)
+                    .weight(0.3f)
                     .background(Color.White),
                 contentAlignment = Alignment.Center
             ){
                 Text(
                     text = item.descripcion,
                     color = Color.Black,
+                    lineHeight = 20.sp,
                     fontWeight = FontWeight.Medium,
                     fontSize = 15.sp,
                     modifier = Modifier.padding(10.dp)
